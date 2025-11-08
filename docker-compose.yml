@@ -10,6 +10,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password --bind-address=0.0.0.0
     volumes:
       - ./mysql_data:/var/lib/mysql
+      - ./mysql_init:/docker-entrypoint-initdb.d
     networks:
       - mainnet
 
@@ -21,8 +22,6 @@ services:
       - db
     environment:
       PMA_HOST: db
-      PMA_USER: root
-      PMA_PASSWORD: root
     ports:
       - "8000:80"
     networks:
