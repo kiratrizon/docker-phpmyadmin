@@ -1,7 +1,7 @@
 services:
   db:
     image: mysql:8.0
-    container_name: mysql-main
+    container_name: my-mysql-main
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -15,7 +15,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin-main
+    container_name: my-phpmyadmin
     restart: always
     depends_on:
       - db
